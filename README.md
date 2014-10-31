@@ -103,9 +103,9 @@ this could also be written like so
 .script(function(){
 	if ($('.hasclass').length) {
 		if ($('.desktop').length) {return "path/to/script1.js", "path/to/script2.js"; }
-		else if ($('.mobile').length) { return "path/to/script3.js";
-			if ($('.landscape').length) {return "path/to/script4.js"; }
-			else if ($('.portrait').length) {return "path/to/script5.js"; }
+		else if ($('.mobile').length) {
+			if ($('.landscape').length) {return "path/to/script3.js", "path/to/script4.js"; }
+			else if ($('.portrait').length) {return "path/to/script3.js", "path/to/script5.js"; }
 			else {return null;}
 		}
 		else if ($('.lt-ie8').length) {return "shoot/me/now.js"; }
