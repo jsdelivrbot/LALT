@@ -66,6 +66,7 @@ $LAB
     	$("body").velocity({ opacity: 1 }, { duration: 600 })
 	});
 });
+```
 
 #### Whats going on here?
 
