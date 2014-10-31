@@ -128,7 +128,7 @@ When a test is passed the `.script` only returns scripts, so you need to write a
 
 ##### retina.css.js
 
-retina.css.js is this script which will append a `<link>` to the `<head>`
+retina.css.js is this script which will append this `<link>` to the `<head>`
 
 ```javascript
 var link = document.createElement("link");
@@ -140,9 +140,21 @@ document.getElementsByTagName("head")[0].appendChild(link);
 #### FOUC
 
 Flashes of unstyled content are much more prevelent when loading assets this way. This is because the `window.onload` event is triggered a lot sooner, before assets have had time to load and execute. To avoid this
-add a simple `<script>` right after the opening `<body>` element
+add a simple `<script>` right after the opening `<body>` element, with some `<style>` in the `<head>`
 
 ```html
+	<style>
+		.notdone { overflow:hidden;}
+		#loader ~ * { opacity:0; }
+		#loader:before { 
+			position:fixed;
+			text-align:center;
+			width:100%;
+			top:50%;
+			content:"loading...";
+		}
+	</style>
+</head>
 <body>
     <script>
         var a = document.getElementsByTagName("body")[0];
@@ -161,28 +173,25 @@ and add this script at the end of the queue in tests.js
     a.className = a.className.replace("notdone","alldone");
 });
 ```
-Now you can play around and add some styles like so
-```css
-.notdone { 
-	overflow:hidden;
-	margin:0;
-}
-#loader ~ * { 
-	opacity:0;
-}
-#loader:before { 
-	position:fixed;
-	text-align:center;
-	width:100%;
-	top:50%;
-	content:"loading...";
-}
-``` 
+
+Basically, what's happening here is that the script is adding the class `.notdone` to the `<body>` element, as well as creating an empty `<div>` with the class `.loader` In the second part - which is triggered when all scripts are loaded - the empty `.loader` `<div>` is removed and the class `.notdone` is changed to `.alldone`
+
+Now if you bind animations, transitions etc to `body.alldone` they will only start when the page has finished loading.
 
 #### Compatibility
 
+works on every browser i've tried so far
 
-#### Examples
+Firefox 3, IE8, Chrome 14, Opera 15 Safari 5.1
+
+Android: Stock browser for Android 2.3, Chrome, Opera Mini, Firefox, UC Browser
+
+iphone 3GS
+
+WP7.5 (the 1st Windows Phone for lumia 800) and UC Browser for Windows Phone
+
+pretty much compatible with any browser that LABjs itself is compatible with
+
 
 
 
