@@ -142,7 +142,7 @@ document.getElementsByTagName("head")[0].appendChild(link);
 Flashes of unstyled content are much more prevelent when loading assets this way. This is because the `window.onload` event is triggered a lot sooner, before assets have had time to load and execute. To avoid this
 add a simple `<script>` right after the opening `<body>` element
 
-```javascript
+```html
 <body>
     <script>
         var a = document.getElementsByTagName("body")[0];
@@ -150,7 +150,7 @@ add a simple `<script>` right after the opening `<body>` element
         var b = document.createElement("div");
         a.appendChild(b);
         b.id = "loader";
-    &lt;/script>
+    </script>
 ```
 and add this script at the end of the queue in tests.js
 ```javascript
