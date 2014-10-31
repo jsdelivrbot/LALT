@@ -1,4 +1,4 @@
 LALT
 ====
 
-LALT `L`ABS.js Asset Loading *T*echnique
+LALT *L*ABS.js *A*sset *L*oading *T*echnique
