@@ -228,13 +228,13 @@ link.href = "css/png-fallback.css";
 	-webkit-font-smoothing: antialiased;
 	-webkit-text-stroke: 0;
 }
-.icon-twitter:before {
+.icon-ampersand:before {
 	content: "\21";
 }
 .icon-facebook:before {
 	content: "\22";
 }
-.icon-github:before {
+.icon-twitter:before {
 	content: "\24";
 }
 .etc .etc
@@ -257,6 +257,7 @@ link.href = "css/png-fallback.css";
 .icon-twitter {
 	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACg...;	
 }
+.etc .etc
 ```
 
 
