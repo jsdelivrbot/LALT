@@ -1,0 +1,92 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>LALT</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <script src="//cdnjs.cloudflare.com/ajax/libs/labjs/2.0.3/LAB.min.js"></script>
+        <script src="js/assets.js"></script>
+        <style>
+            .notdone { overflow:hidden }
+            #loader ~ * { opacity:0 }
+            #loader:before { 
+                position:fixed;
+                text-align:center;
+                width:100%;
+                font-size:2em;
+                top:42%;
+                content:"Loading..."
+            }
+        </style>
+    </head>
+    <body>
+      <script>
+        // the first part of the avoiding FOUC script
+        
+        var a = document.getElementsByTagName("body")[0];
+        a.className = a.className + " notdone";
+        var b = document.createElement("div");
+        a.appendChild(b);
+        b.id = "loader";
+    </script>
+    
+        <h1>Test .1 jaygrid</h1>
+          <div class="d-col-1-2 t-col-1-3 m-col-8-10 m-center">
+              <h2>Hello World</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sagittis enim vel lectus malesuada dignissim. Aenean a faucibus arcu, eget dictum turpis. Integer tellus mi, fermentum et aliquam quis, placerat nec metus. Suspendisse fermentum sodales est, a consequat arcu congue nec. Quisque auctor neque dui, vel posuere nisi aliquam ac. Nullam neque nunc, placerat vel aliquet et, accumsan sit amet odio. Etiam a neque enim. Nam blandit a diam vel interdum. Quisque imperdiet mollis porttitor. Vivamus eu nulla a sem ornare suscipit. Nunc venenatis quam vitae diam pretium vestibulum. Quisque non aliquam justo, vitae egestas ex. Donec malesuada lacus eget magna aliquet, ac molestie arcu porttitor. Suspendisse at interdum sem.</p>
+          </div>
+          <div class="d-col-1-2 t-col-2-3 m-col-8-9 m-center">
+              <h3>Hello World Again</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sagittis enim vel lectus malesuada dignissim. Aenean a faucibus arcu, eget dictum turpis. Integer tellus mi, fermentum et aliquam quis, placerat nec metus. Suspendisse fermentum sodales est, a consequat arcu congue nec. Quisque auctor neque dui, vel posuere nisi aliquam ac. Nullam neque nunc, placerat vel aliquet et, accumsan sit amet odio. Etiam a neque enim. Nam blandit a diam vel interdum. Quisque imperdiet mollis porttitor. Vivamus eu nulla a sem ornare suscipit. Nunc venenatis quam vitae diam pretium vestibulum. Quisque non aliquam justo, vitae egestas ex. Donec malesuada lacus eget magna aliquet, ac molestie arcu porttitor. Suspendisse at interdum sem.</p>
+          </div>
+        <h5>end test .1</h5>
+        
+        <h1>Test .2 stupidtable</h1>
+          <table>
+    <thead>
+      <tr>
+        <th data-sort="int">int</th>
+        <th data-sort="float">float</th>
+        <th data-sort="string">string</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>15</td>
+        <td>-.18</td>
+        <td>banana</td>
+      </tr>
+      <tr class="awesome">
+        <td>95</td>
+        <td>36</td>
+        <td>coke</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>-152.5</td>
+        <td>apple</td>
+      </tr>
+      <tr>
+        <td>-53</td>
+        <td>88.5</td>
+        <td>zebra</td>
+      </tr>
+      <tr>
+        <td>195</td>
+        <td>-858</td>
+        <td>orange</td>
+      </tr>
+    </tbody>
+  </table>
+        <h5>end test .2</h5>
+        
+        <h1>Test .3 iconfont</h1>
+          <p><span class="icon-facebook"></span> <span class="icon-twitter"></span> <span class="icon-ampersand"></span></p>
+        <h5>end test .3</h5>
+        
+    
+    </body>
+</html>
