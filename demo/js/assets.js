@@ -7,7 +7,7 @@ $LAB
 // add jquery, velocity.js and head.js then wait until they are loaded before loading "tests.js"
 // I just use these 3 for my examples, you could just as easily use Zepto, Prototype, Modernizr etc
   
-  .script("//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js", "js/velocity.min.js", "//cdnjs.cloudflare.com/ajax/libs/headjs/1.0.3/head.css3.min.js").wait()
+  .script("//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js", "//cdnjs.cloudflare.com/ajax/libs/velocity/1.1.0/velocity.min.js", "//cdnjs.cloudflare.com/ajax/libs/headjs/1.0.3/head.css3.min.js").wait()
   
 // all scripts that are loaded conditionally
 // are placed inside the tests.js" file
