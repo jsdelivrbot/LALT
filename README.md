@@ -119,7 +119,7 @@ this could also be written like so
 
 #### loading stylesheets
 
-When a test is passed the `.script` only returns scripts, so you need to write a script which will load a stylesheet
+When a test is passed the `.script` only returns scripts, so you need to write a script which will in turn load a stylesheet
 
 ```javascript
 .script(function(){
@@ -130,7 +130,7 @@ When a test is passed the `.script` only returns scripts, so you need to write a
 
 ##### retina.css.js
 
-here are the contents of the retina.css.js
+retina.css.js is this script which will append a `<link>` to the `<head>`
 
 ```javascript
 var link = document.createElement("link");
