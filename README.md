@@ -49,7 +49,7 @@ If the class `.desktop` is found and the attribute `[data-sr]` is a child of `.d
 
 The `.desktop` class is added to the `<html>` element by the head.css3.js script back in assets.js, and the test is 'written' in jquery, which is why both of these needed to be loaded and executed before the tests.js file is loaded. The attrib. `[data-sr]` is added to any element that you want to add some fancy scrolling effect to.
 
-After the `.script` test is done, then comes the `.wait` init. which is usually found inside a `<script>` just before the closing `</body>` tag
+After the `.script` test is done, then comes the `.wait` init. which would normally be found inside a `<script>` just before the closing `</body>` tag
 
 #### Multiple tests
 
