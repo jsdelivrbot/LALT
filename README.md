@@ -260,12 +260,6 @@ link.href = "css/png-fallback.css";
 .etc .etc
 ```
 
-
-
-
-
-
-
 #### Compatibility
 
 works on every browser i've tried so far
@@ -279,6 +273,8 @@ iphone 3GS
 WP7.5 (the 1st Windows Phone for lumia 800) and UC Browser for Windows Phone
 
 pretty much compatible with any browser that LABjs itself is compatible with
+
+
 
 ##### Note
 This repository is just a guide, there is nothing to download here
