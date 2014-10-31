@@ -17,7 +17,7 @@ these are the only two scripts you'll need in your `<head>`
 
 #### assets.js
 
-this is where you load your libraries so that tests in tests.js can run and determine weather or not to load resources conditionally [more info](https://github.com/Paul-Browne/LALT/blob/master/js/assets.js)
+this is where you load your libraries so that tests in tests.js can run and determine weather or not to load resources conditionally.
 
 ```javascript
 $LAB
@@ -27,8 +27,7 @@ $LAB
 
 #### tests.js
 
-this is where you carry out tests which determine if resources will be needed
-[more info](https://github.com/Paul-Browne/LALT/blob/master/js/tests.js)
+this is where you carry out tests which determine if resources will be needed.
 
 ```javascript
 $LAB
@@ -203,57 +202,62 @@ link.type = "text/css";
 link.rel = "stylesheet";
 document.getElementsByTagName("head")[0].appendChild(link);
 ```
-
+png-fallback.css.js is the same except for the line
 ```javascript
-var link = document.createElement("link");
 link.href = "css/png-fallback.css";
-link.type = "text/css";
-link.rel = "stylesheet";
-document.getElementsByTagName("head")[0].appendChild(link);
 ```
-
-##### iconfont.css.
+##### iconfont.css
 
 ```css
 @font-face {
-font-family: 'iconfont';
-src:url('../fonts/iconfont.eot');
-src:url('../fonts/iconfont.eot?#iefix')   format('embedded-opentype'),
-url('../fonts/iconfont.woff')             format('woff'),
-url('../fonts/iconfont.ttf')              format('truetype'),
-url('../fonts/iconfont.svg#iconfont')     format('svg');
-font-weight: normal;  
-font-style: normal;
+	font-family: 'iconfont';
+	src:url('../fonts/iconfont.eot');
+	src:url('../fonts/iconfont.eot?#iefix')   format('embedded-opentype'),
+	url('../fonts/iconfont.woff')             format('woff'),
+	url('../fonts/iconfont.ttf')              format('truetype'),
+	url('../fonts/iconfont.svg#iconfont')     format('svg');
+	font-weight: normal;  
+	font-style: normal;
 }
-
 [class*="icon-"] {
-font-family: 'iconfont';
-speak: none;
-font-variant: normal;
-text-transform: none;
-line-height: 0;
--webkit-font-smoothing: antialiased;
--webkit-text-stroke: 0;
+	font-family: 'iconfont';
+	speak: none;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 0;
+	-webkit-font-smoothing: antialiased;
+	-webkit-text-stroke: 0;
 }
 .icon-twitter:before {
-content: "\21";
+	content: "\21";
 }
 .icon-facebook:before {
-content: "\22";
+	content: "\22";
 }
 .icon-github:before {
-content: "\24";
-}
-.icon-mail:before {
-content: "\25";
-}
-.icon-ampersand:before {
-content: "\26";
+	content: "\24";
 }
 .etc .etc
 ```
-
-
+##### png-fallback.css
+```css
+[class*="icon-"] {
+	display: inline-block;
+	background-repeat: no-repeat;
+	background-size: contain;
+	width:1em;
+	height:1em;
+}
+.icon-ampersand {
+	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANS...;
+}
+.icon-facebook {
+	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEU...;
+}
+.icon-twitter {
+	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACg...;	
+}
+```
 
 
 
