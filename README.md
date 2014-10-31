@@ -178,6 +178,89 @@ Basically, what's happening here is that the script is adding the class `.notdon
 
 Now if you bind animations, transitions etc to `body.alldone` they will only start when the page has finished loading.
 
+#### Examples
+
+##### Icon font loading
+
+head.js, as well as modernizer have tests to see if the `@fontface` css property is supported by a browser. If so, the class `.fontface` is added to the `<html>`, if not `.no-fontface` is added.
+Icon fonts are normally setup so that an empty `<span>` with a class `.icon-twitter` will display said icon.
+Knowing this we can load an icon font via `@fontface` in a stylesheet if the class `icon-*` is a child of the class `.fontface`, if, on the other hand, `icon-*` is a child of the class `.no-fontface` we can load a png fallback. If no icons are needed in the page then nothing is loaded. 
+
+```javascript
+.script(function(){
+	if ($('.fontface [class*="icon-"]').length) {return "js/iconfont.css.js"; }
+	else if ($('.no-fontface [class*="icon-"]').length) {return "js/png-fallback.css.js"; }
+	else {return null;}
+})
+```
+
+Contents of iconfont.css.js and png-fallback.css.js
+
+```javascript
+var link = document.createElement("link");
+link.href = "css/iconfont.css";
+link.type = "text/css";
+link.rel = "stylesheet";
+document.getElementsByTagName("head")[0].appendChild(link);
+```
+
+```javascript
+var link = document.createElement("link");
+link.href = "css/png-fallback.css";
+link.type = "text/css";
+link.rel = "stylesheet";
+document.getElementsByTagName("head")[0].appendChild(link);
+```
+
+##### iconfont.css.
+
+```css
+@font-face {
+font-family: 'iconfont';
+src:url('../fonts/iconfont.eot');
+src:url('../fonts/iconfont.eot?#iefix')   format('embedded-opentype'),
+url('../fonts/iconfont.woff')             format('woff'),
+url('../fonts/iconfont.ttf')              format('truetype'),
+url('../fonts/iconfont.svg#iconfont')     format('svg');
+font-weight: normal;  
+font-style: normal;
+}
+
+[class*="icon-"] {
+font-family: 'iconfont';
+speak: none;
+font-variant: normal;
+text-transform: none;
+line-height: 0;
+-webkit-font-smoothing: antialiased;
+-webkit-text-stroke: 0;
+}
+.icon-twitter:before {
+content: "\21";
+}
+.icon-facebook:before {
+content: "\22";
+}
+.icon-github:before {
+content: "\24";
+}
+.icon-mail:before {
+content: "\25";
+}
+.icon-ampersand:before {
+content: "\26";
+}
+.etc .etc
+```
+
+
+
+
+
+
+
+
+
 #### Compatibility
 
 works on every browser i've tried so far
@@ -192,7 +275,8 @@ WP7.5 (the 1st Windows Phone for lumia 800) and UC Browser for Windows Phone
 
 pretty much compatible with any browser that LABjs itself is compatible with
 
-
+##### Note
+This repository is just a guide, there is nothing to download here
 
 
 
