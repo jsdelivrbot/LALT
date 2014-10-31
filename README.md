@@ -117,20 +117,29 @@ this could also be written like so
 })
 ```
 
+#### loading stylesheets
 
-
-
-
-
+When a test is passed the `.script` only returns scripts, so you need to write a script which will load a stylesheet
 
 ```javascript
 .script(function(){
-	if (/*some test*/) {return "/*script1*/", "/*script2*/", "/*script3...*/"; }
-	else if (/*another test*/) {return "/*script1*/", "/*script2*/", "/*script3...*/"; }
-	else if (/*yet another test*/) {return "/*script1*/", "/*script2*/", "/*script3...*/"; }
+	if ($('.mobile.retina').length) {return "script1.js", "retina.css.js"; }
 	else {return null;}
 })
 ```
+
+##### retina.css.js
+
+here are the contents of the retina.css.js
+
+```javascript
+var link = document.createElement("link");
+link.href = "css/retina.css";
+link.type = "text/css";
+link.rel = "stylesheet";
+document.getElementsByTagName("head")[0].appendChild(link);
+```
+
 
 
 
