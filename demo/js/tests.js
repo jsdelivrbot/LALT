@@ -4,72 +4,39 @@ $LAB
 
 .script(function(){
 	
-// load script if the <table> element exists
+	// load script if the the class *-col-* exists
 	
-	if ($('table').length) {return "js/stupidtable.min.js"; }
+	if ($('[class*="-col-"]').length) {return "//rawgit.com/Paul-Browne/jaygrid/master/js/jquery.jaygrid.min.js"; }
 	
-// otherwise do nothing
+	// otherwise do nothing
 	
+	else {return null;}
+})
+.script(function(){
+	if ($('table').length) {return "//rawgit.com/joequery/Stupid-Table-Plugin/master/stupidtable.min.js"; }
 	else {return null;}	
 })
 .script(function(){
-	if ($('[class*="-col-"]').length) {return "js/jquery.jaygrid.min.js"; }
+	
+	// add stylesheets by including a .js file, that will inturn create a <link> with your stylesheets.
+	
+	if ($('.fontface [class*="icon-"]').length) {return "js/iconfont.css.js"; }
+	else if ($('.no-fontface [class*="icon-"]').length) {return "js/iconfont-fallback.css.js"; }
 	else {return null;}
 })
 .script(function(){
-		if ($('.desktop').length) {return "js/visibly.js"; }
-		else {return null;}
-})
-
-/*
-
-// add stylesheets by including a .js file, that will inturn
-// create a <link> with your stylesheets. This is commented out
-// because I prefer creating the <link> directly in a .wait
-// function see below...
-
-.script(function(){
-	if ($('.fontface [class*="icon-"]').length) {return "js/font-includes.js"; }
-	else if ($('.no-fontface [class*="icon-"]').length) {return "js/font-includes-fallback.js"; }
+	if ($('.desktop').length) {return "https://rawgit.com/addyosmani/visibly.js/master/visibly.js"; }
 	else {return null;}
 })
-*/
 
-// again, write each inline initialization script in a seperate .wait function
+// write each inline initialization script in a seperate .wait function
 // these init. scripts are chained, they DON'T run simultaneously/asynchronously
 
 .wait(function(){
-	
-// conditionally include a stylesheet 
-	
-// this is quite handy, If @fontface is supported
-// and there is an icon in use somewhere in the doc.
-// then the iconfont is loaded, if there is no @fontface
-// support then a fallback is loaded, eg. .png icons
-// in place of an iconfont. If no icons are found, then 
-// neither are loaded.
-	
-	if ($('.fontface [class*="icon-"]').length) { 
-		var link = document.createElement("link");
-		link.href = "css/iconfont.css";
-		link.type = "text/css";
-		link.rel = "stylesheet";
-		document.getElementsByTagName("head")[0].appendChild(link);
-	}
-	else if ($('.no-fontface [class*="icon-"]').length) { 
-		var link = document.createElement("link");
-		link.href = "css/iconfont-fallback.css";
-		link.type = "text/css";
-		link.rel = "stylesheet";
-		document.getElementsByTagName("head")[0].appendChild(link);
-	}
-	else {return null;}
+	$.jaygrid();
 })
 .wait(function(){
 	$("table").stupidtable();
-})
-.wait(function(){
-	$.jaygrid();
 })
 
 // this is the second part of the avoiding FOUC script,
@@ -93,13 +60,4 @@ $LAB
     visibly.onVisible(function (){
     	$("body").velocity({ opacity: 1 }, { duration: 600 })
 	});
-})
-
-// ignore this, this is just to help me see the
-// classes that head.js is adding to the html
-
-.script("js/classes.js")
-.wait(function(){
-	var theclasses = $('html').classes().toString().replace(/,/g," ");
-	$(".theclasses").html(theclasses);
-}); // <-- but remember to end with a semi-colon
+}); // <-- remember to end with a semi-colon
