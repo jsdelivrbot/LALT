@@ -88,14 +88,12 @@ You can load more than one script when a test is passed, like so
 ```
 
 #### Multiple conditions per test
-
-You can have more than one condition, like so
-
+You can have multipe conditions on one test
 ```javascript
 .script(function(){
 	if ($('.desktop .hasclass').length) {return "path/to/script1.js", "path/to/script2.js"; }
 	else if ($('.mobile.landscape .hasclass').length) {return "path/to/script3.js", "path/to/script4.js"; }
-	else if ($('.mobile.portrait .hasclass').length) {return "path/to/script5.js", "path/to/script6.js"; }
+	else if ($('.mobile.portrait .hasclass').length) {return "path/to/script3.js", "path/to/script5.js"; }
 	else if ($('.lt-ie8 .hasclass').length) {return "shoot/me/now.js"; }
 	else {return null;}
 })
@@ -105,9 +103,9 @@ this could also be written like so
 .script(function(){
 	if ($('.hasclass').length) {
 		if ($('.desktop').length) {return "path/to/script1.js", "path/to/script2.js"; }
-		else if ($('.mobile').length) {
-			if ($('.landscape').length) {return "path/to/script3.js", "path/to/script4.js"; }
-			else if ($('.portrait').length) {return "path/to/script5.js", "path/to/script6.js"; }
+		else if ($('.mobile').length) { return "path/to/script3.js";
+			if ($('.landscape').length) {return "path/to/script4.js"; }
+			else if ($('.portrait').length) {return "path/to/script5.js"; }
 			else {return null;}
 		}
 		else if ($('.lt-ie8').length) {return "shoot/me/now.js"; }
@@ -139,7 +137,52 @@ link.type = "text/css";
 link.rel = "stylesheet";
 document.getElementsByTagName("head")[0].appendChild(link);
 ```
+#### FOUC
 
+Flashes of unstyled content are much more prevelent when loading assets this way. This is because the `window.onload` event is triggered a lot sooner, before assets have had time to load and execute. To avoid this
+add a simple `<script>` right after the opening `<body>` element
+
+```javascript
+<body>
+    <script>
+        var a = document.getElementsByTagName("body")[0];
+        a.className = a.className + " notdone";
+        var b = document.createElement("div");
+        a.appendChild(b);
+        b.id = "loader";
+    &lt;/script>
+```
+and add this script at the end of the queue in tests.js
+```javascript
+.wait(function(){
+    var a = document.getElementsByTagName("body")[0];
+    var c = document.getElementById("loader");           
+    a.removeChild(c);
+    a.className = a.className.replace("notdone","alldone");
+});
+```
+Now you can play around and add some styles like so
+```css
+.notdone { 
+	overflow:hidden;
+	margin:0;
+}
+#loader ~ * { 
+	opacity:0;
+}
+#loader:before { 
+	position:fixed;
+	text-align:center;
+	width:100%;
+	top:50%;
+	content:"loading...";
+}
+``` 
+
+#### Compatibility
+
+
+#### Examples
 
 
 
