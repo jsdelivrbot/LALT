@@ -49,6 +49,7 @@ $LAB
 .wait(function(){
 	window.sr = new scrollReveal({
 		reset: true,
+		move: '222px',
 		mobile: true
 	});
 })
