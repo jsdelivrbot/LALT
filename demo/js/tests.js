@@ -44,6 +44,9 @@ $LAB
 	$.jaygrid();
 })
 .wait(function(){
+	$("#test-4").parallax("50%", 0.3);
+})
+.wait(function(){
 	$("table").stupidtable();
 })
 .wait(function(){
@@ -52,9 +55,6 @@ $LAB
 		move: '222px',
 		mobile: true
 	});
-})
-.wait(function(){
-	$("#test-4").parallax("50%", 0.3);
 })
 
 // this is the second part of the avoiding FOUC script,
