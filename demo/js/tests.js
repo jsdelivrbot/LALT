@@ -25,7 +25,15 @@ $LAB
 	else {return null;}
 })
 .script(function(){
-	if ($('.desktop').length) {return "https://rawgit.com/addyosmani/visibly.js/master/visibly.js"; }
+	if ($('.desktop').length) {return "//rawgit.com/addyosmani/visibly.js/master/visibly.js"; }
+	else {return null;}
+})
+.script(function(){
+	if ($('[data-sr]').length) {return "//cdnjs.cloudflare.com/ajax/libs/scrollReveal.js/0.1.2/scrollReveal.min.js"; }
+	else {return null;}
+})
+.script(function(){
+	if ($('#test-4').length) {return "//cdnjs.cloudflare.com/ajax/libs/jquery-parallax/1.1.3/jquery-parallax-min.js"; }	
 	else {return null;}
 })
 
@@ -37,6 +45,15 @@ $LAB
 })
 .wait(function(){
 	$("table").stupidtable();
+})
+.wait(function(){
+	window.sr = new scrollReveal({
+		reset: true,
+		mobile: true
+	});
+})
+.wait(function(){
+	$("#test-4").parallax("50%", 0.3);
 })
 
 // this is the second part of the avoiding FOUC script,
