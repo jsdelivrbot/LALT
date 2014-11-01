@@ -81,7 +81,7 @@ You can load more than one script when a test is passed, like so
 
 ```javascript
 .script(function(){
-	if (some test) {return "path/to/script1.js", "path/to/script2.js", "path/to/script3.js..."; }
+	if (some test) {return ["path/to/script1.js", "path/to/script2.js", "path/to/script3.js..."]; }
 	else {return null;}
 })
 ```
@@ -90,9 +90,9 @@ You can load more than one script when a test is passed, like so
 You can have multipe conditions on one test
 ```javascript
 .script(function(){
-	if ($('.desktop .hasclass').length) {return "path/to/script1.js", "path/to/script2.js"; }
-	else if ($('.mobile.landscape .hasclass').length) {return "path/to/script3.js", "path/to/script4.js"; }
-	else if ($('.mobile.portrait .hasclass').length) {return "path/to/script3.js", "path/to/script5.js"; }
+	if ($('.desktop .hasclass').length) {return ["path/to/script1.js", "path/to/script2.js"]; }
+	else if ($('.mobile.landscape .hasclass').length) {return ["path/to/script3.js", "path/to/script4.js"]; }
+	else if ($('.mobile.portrait .hasclass').length) {return ["path/to/script3.js", "path/to/script5.js"]; }
 	else if ($('.lt-ie8 .hasclass').length) {return "shoot/me/now.js"; }
 	else {return null;}
 })
@@ -101,10 +101,10 @@ this could also be written like so
 ```javascript
 .script(function(){
 	if ($('.hasclass').length) {
-		if ($('.desktop').length) {return "path/to/script1.js", "path/to/script2.js"; }
+		if ($('.desktop').length) {return ["path/to/script1.js", "path/to/script2.js"]; }
 		else if ($('.mobile').length) {
-			if ($('.landscape').length) {return "path/to/script3.js", "path/to/script4.js"; }
-			else if ($('.portrait').length) {return "path/to/script3.js", "path/to/script5.js"; }
+			if ($('.landscape').length) {return ["path/to/script3.js", "path/to/script4.js"]; }
+			else if ($('.portrait').length) {return ["path/to/script3.js", "path/to/script5.js"]; }
 			else {return null;}
 		}
 		else if ($('.lt-ie8').length) {return "shoot/me/now.js"; }
@@ -120,7 +120,7 @@ When a test is passed the `.script` only returns scripts, so you need to write a
 
 ```javascript
 .script(function(){
-	if ($('.mobile.retina').length) {return "script1.js", "retina.css.js"; }
+	if ($('.mobile.retina').length) {return ["script1.js", "retina.css.js"]; }
 	else {return null;}
 })
 ```
