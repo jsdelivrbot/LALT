@@ -13,7 +13,7 @@ $LAB
 	else {return null;}
 })
 .script(function(){
-	if ($('table').length) {return "//cdnjs.cloudflare.com/ajax/libs/stupidtable/0.0.1/stupidtable.js"; }
+	if ($('table').length) {return ["//cdnjs.cloudflare.com/ajax/libs/stupidtable/0.0.1/stupidtable.js", "js/table.css.js"]; }
 	else {return null;}	
 })
 .script(function(){
