@@ -29,7 +29,7 @@ $LAB
 	else {return null;}
 })
 .script(function(){
-	if ($('[data-sr]').length) {return "//cdnjs.cloudflare.com/ajax/libs/scrollReveal.js/0.1.2/scrollReveal.min.js"; }
+	if ($('[data-sr]').length) {return "js/scrollReveal.min.js"; }
 	else {return null;}
 })
 .script(function(){
