@@ -274,7 +274,11 @@ WP7.5 (the 1st Windows Phone for lumia 800) and UC Browser for Windows Phone
 
 pretty much compatible with any browser that LABjs itself is compatible with
 
+##### Issues
 
+The LALT for loading resources is supported by the browsers above, any failure is probably down to the script(s) being loaded. So check the browser compatibility of your plugins. 
+
+head.js/modernizr - might not be 100% accurate eg. The head.js @fontface test throws a false positive for IE9 on WP7.5
 
 ##### Note
 This repository is just a guide, there is nothing to download here
