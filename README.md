@@ -136,6 +136,11 @@ link.type = "text/css";
 link.rel = "stylesheet";
 document.getElementsByTagName("head")[0].appendChild(link);
 ```
+
+##### when to load stylesheets conditionally?
+
+The task of conditionally loading a stylesheet does create its own footprint, since you first have to point to a script (above) which will then load a stylesheet. So it's only worth doing this for medium-to-large sized .css files - such as ones that contain `@fontface`, base64 strings, or entire grid systems.   
+
 #### FOUC
 
 Flashes of unstyled content are much more prevelent when loading assets this way. This is because the `window.onload` event is triggered a lot sooner, before assets have had time to load and execute. To avoid this
