@@ -35,13 +35,15 @@
     </head>
     <body>
       <script>
-        // the first part of the avoiding FOUC script
-        
         var a = document.getElementsByTagName("body")[0];
         a.className = a.className + " notdone";
         var b = document.createElement("div");
         a.appendChild(b);
         b.id = "loader";
+        window.onload = function(){
+            a.removeChild(b);
+            a.className = a.className.replace("notdone","alldone");
+        };
     </script>
     
         <h1>Test .1 jaygrid</h1>
