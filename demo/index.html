@@ -24,9 +24,13 @@
                 position: fixed;
                 text-align:center;
                 width:100%;
-                font-size:1em;
+                font-size:1.5em;
                 bottom:25%;
                 content:"loading..."
+                -webkit-animation: spin 2s infinite;
+                animation: spin 2s infinite;
+                -webkit-animation-direction:reverse;
+                animation-direction:reverse;
             }
             
             @-webkit-keyframes spin {
