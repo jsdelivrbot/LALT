@@ -176,7 +176,7 @@ add a simple `<script>` right after the opening `<body>` element, with some `<st
 
 Basically, what's happening here is that the script is adding the class `.notdone` to the `<body>` element, as well as creating an empty `<div class="loader">`. Then on `windw.onload` the empty `<div class="loader">` is removed and the class `.notdone` is changed to `.alldone`
 
-######Note: Some plugins, like [highlight.js](https://highlightjs.org/) offer you the option of binding the init. to the `window.onload` event. Don't do this! When the browser gets scripts from the cache there is a very good chance that the `window.onload` event will fire *before* the scripts are executed, which will result in non-execution of that script. 
+#####Note: Some plugins, like [highlight.js](https://highlightjs.org/) offer you the option of binding the init. to the `window.onload` event. Don't do this! When the browser fetches scripts from the cache there is a very good chance that the `window.onload` event will fire *before* the scripts are executed, which will result in non-execution of that script. 
 
 Now if you bind animations, transitions, etc. to `body.alldone` they will only start when the page has finished loading.
 
