@@ -41,7 +41,8 @@
         a.appendChild(b);
         b.id = "loader";
         window.onload = function(){
-            a.removeChild(b);
+            var c = document.getElementById("loader");
+            a.removeChild(c);
             a.className = a.className.replace("notdone","alldone");
         };
     </script>
