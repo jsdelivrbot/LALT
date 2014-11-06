@@ -166,21 +166,17 @@ add a simple `<script>` right after the opening `<body>` element, with some `<st
         var b = document.createElement("div");
         a.appendChild(b);
         b.id = "loader";
+        window.onload = function(){
+            var c = document.getElementById("loader");
+            a.removeChild(c);
+            a.className = a.className.replace("notdone","alldone");
+        };
     </script>
 ```
-and add this script at the end of the queue in tests.js
-```javascript
-.wait(function(){
-    var a = document.getElementsByTagName("body")[0];
-    var c = document.getElementById("loader");           
-    a.removeChild(c);
-    a.className = a.className.replace("notdone","alldone");
-});
-```
 
-Basically, what's happening here is that the script is adding the class `.notdone` to the `<body>` element, as well as creating an empty `<div>` with the class `.loader` In the second part - which is triggered when all scripts are loaded - the empty `.loader` `<div>` is removed and the class `.notdone` is changed to `.alldone`
+Basically, what's happening here is that the script is adding the class `.notdone` to the `<body>` element, as well as creating an empty `<div class="loader">`. Then on `windw.onload` the empty `<div class="loader">` is removed and the class `.notdone` is changed to `.alldone`
 
-Now if you bind animations, transitions etc to `body.alldone` they will only start when the page has finished loading.
+Now if you bind animations, transitions, etc. to `body.alldone` they will only start when the page has finished loading.
 
 #### Examples
 
