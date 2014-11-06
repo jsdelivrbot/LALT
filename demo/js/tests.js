@@ -56,25 +56,6 @@ $LAB
 		mobile: true
 	});
 })
-
-// this is the second part of the avoiding FOUC script,
-// it should come last in the chain unless...
-
-
-.wait(function(){
-    window.onload = function(){
-        var a = document.getElementsByTagName("body")[0];
-        var c = document.getElementById("loader");           
-        a.removeChild(c);
-        a.className = a.className.replace("notdone","alldone");
-    };
-})
-
-
-// ...unless you use a script that doesn't affect the layout of the page
-// and wont be missed/triggered at page load, eg. a script that validates forms (validate.js), 
-// or one for tooltips (bootstrap-tooltip.js) or this init. below which triggers when you switch tabs
-
 .wait(function(){
 	visibly.onHidden(function (){
     	$("body").css({"opacity":"0"})
