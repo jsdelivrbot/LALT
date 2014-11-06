@@ -167,8 +167,7 @@ add a simple `<script>` right after the opening `<body>` element, with some `<st
         a.appendChild(b);
         b.id = "loader";
         window.onload = function(){
-            var c = document.getElementById("loader");
-            a.removeChild(c);
+            a.removeChild(b);
             a.className = a.className.replace("notdone","alldone");
         };
     </script>
