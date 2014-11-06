@@ -4,7 +4,7 @@ LALT - LAB.js Asset Loading Technique
 
 #### What is LALT?
 
-Built on [LAB.js](http://labjs.com/) fantastic script loader, LALT is a technique for loading assets - js & css - conditionally, so resources are only ever loaded when they are needed.
+Built on [LAB.js](//labjs.com/) fantastic script loader, LALT is a technique for loading assets - js & css - conditionally, so resources are only ever loaded when they are needed.
 
 ### Setup
 
@@ -42,7 +42,7 @@ $LAB
 
 #### Whats going on here?
 
-OK, so we have 1 script and 1 init. for the [scrollReveal]() plugin, the test runs like so...
+OK, so we have 1 script and 1 init. for the [scrollReveal](//scrollrevealjs.org/) plugin, the test runs like so...
 
 If the class `.desktop` is found and the attribute `[data-sr]` is a child of `.desktop` then the scrollReveal script will load. If not, then nothing is loaded. simple.
 
@@ -72,7 +72,7 @@ $LAB
 });
 ```
 
-Here i've added another test for a script I want to load, when I have a table that is sorted by the [stupidtable]() plugin. The test looks to see if the `[data-sort]` attrib. is attached to a `<th>` element. If it is, then the script is loaded, if not, nothing is loaded.
+Here i've added another test for a script I want to load, when I have a table that is sorted by the [stupidtable](//github.com/joequery/Stupid-Table-Plugin) plugin. The test looks to see if the `[data-sort]` attrib. is attached to a `<th>` element. If it is, then the script is loaded, if not, nothing is loaded.
 The `.scripts` are chained like so because they are run simultaneously/asynchronously, if you chained everything like `.script` `.wait` `.script` `.wait` you would lose the asynchronicity
 
 #### Multiple scripts per test
@@ -176,7 +176,7 @@ add a simple `<script>` right after the opening `<body>` element, with some `<st
 
 Basically, what's happening here is that the script is adding the class `.notdone` to the `<body>` element, as well as creating an empty `<div class="loader">`. Then on `windw.onload` the empty `<div class="loader">` is removed and the class `.notdone` is changed to `.alldone`
 
-#####Note: Some plugins, like [highlight.js](https://highlightjs.org/) offer you the option of binding the init. to the `window.onload` event. Don't do this! When the browser fetches scripts from the cache there is a very good chance that the `window.onload` event will fire *before* the scripts are executed, which will result in non-execution of that script. 
+#####Note: Some plugins, like [highlight.js](//highlightjs.org/) offer you the option of binding the init. to the `window.onload` event. Don't do this! When the browser fetches scripts from the cache there is a very good chance that the `window.onload` event will fire *before* the scripts are executed, which will result in non-execution of that script. 
 
 Now if you bind animations, transitions, etc. to `body.alldone` they will only start when the page has finished loading.
 
