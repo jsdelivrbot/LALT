@@ -17,6 +17,8 @@
                 position: fixed;
                 width:100%;
                 height:100%;
+                -webkit-animation: rotate 2s infinite;
+                animation: rotate 2s infinite;
             }
             #loader:before { 
                 position: fixed;
@@ -25,6 +27,15 @@
                 font-size:1em;
                 bottom:25%;
                 content:"loading..."
+            }
+            
+            @-webkit-keyframes spin {
+            from {-webkit-transform: rotateZ(0);}
+            to {-webkit-transform: rotateZ(360deg);}
+            }
+            @keyframes spin {
+            from {transform: rotateZ(0);}
+            to {transform: rotateZ(360deg);}
             }
             /* ============================== */
             #test-4{
