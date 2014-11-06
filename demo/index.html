@@ -6,15 +6,19 @@
         <title>LALT</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        
         <script src="//cdnjs.cloudflare.com/ajax/libs/labjs/2.0.3/LAB.min.js"></script>
         <script src="js/assets.js"></script>
         <link rel="stylesheet" href="css/main.css" type="text/css" media="all">
         <style>
             .notdone { overflow:hidden }
             #loader ~ * { opacity:0 }
+            #loader { 
+                background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACABAMAAAAxEHz4AAAAD1BMVEUBBAA6PDl1d3Sws6/9//xhwTw9AAAAAWJLR0QAiAUdSAAAAAlwSFlzAAAOwwAADsMBx2+oZAAAAAd0SU1FB94LBgwKLQBx9KkAAAIBSURBVGje7dnrkYQgDADgYAWONrAONrAeFQj913T70DXkhSP/duFv4Lu5C4TgQaoc0IBfAUIlEIdQCcBQC8BYCxjCSQB8LeDmSgC6WsA1oAENaMAPAou3AB6lwNqzAo6AhUcJEPvH1KABUjQH4u11BQQZeK5nUeDr6Zwd2KP5bZ8BE4AwZwP+PtFRA+4A0pwNmOQoAhZAw1MAlOgBLD2e4rwFoCgcG4DMmQ0AJRPQBlDmSMARhTyBeOzJFIFPooAkUJgjA3vrBjSBeIwWsEWB/gHcjf6iGOhYFMgUF7BGgY5HCfBMMEooAZ4/k0Zz4L1Bji0VytEcGMmmzgFPjgwHRnqsQjmKgYEdTAwcRzBOCoDK3coAXMpWBQjsCAe5rMcGNOC7AfMwwYnDdNzJ2YHl0ZtWUAZ6z4sFJU7FknaXS9pYLGlb2SsU1ZqyPmddgHyxzNbF4sJauFgec3p2tfVWFMrXp3b1+lQCWFbV691uIVDmtQbDbmLEBqjLWpxYWC+0YHmTZTdyUhM4pxLA3gWL1WhugNLM8kbYJxkId2M9Eniz/SkZk9TQ0zIwJB14J7xTPv+JzxFSE6VHTb4dOunJg6pe7NWvZu8nWUg2IDzssmTOqQRc+ijbgAY0oAFfB7hKwCrnpwCf6oAx1QFX1+/AEOqA6+u3rzjX17f/uTbgNf4BiER2pfqyHF4AAAAASUVORK5CYII=") no-repeat center center fixed;
+                position: fixed;
+                width:100%;
+            }
             #loader:before { 
-                position:fixed;
+                position: fixed;
                 text-align:center;
                 width:100%;
                 font-size:1em;
