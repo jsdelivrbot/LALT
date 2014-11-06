@@ -143,7 +143,7 @@ The task of conditionally loading a stylesheet does create its own footprint, si
 
 #### FOUC
 
-Flashes of unstyled content are much more prevelent when loading assets this way. This is because the `window.onload` event is triggered a lot sooner, before assets have had time to load and execute. To avoid this
+Flashes of unstyled content are much more prevelent when loading assets this way. This is because the `document.ready` event is triggered a lot sooner, before assets have had time to load and execute. To avoid this
 add a simple `<script>` right after the opening `<body>` element, with some `<style>` in the `<head>`
 
 ```html
