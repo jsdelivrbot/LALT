@@ -60,12 +60,16 @@ $LAB
 // this is the second part of the avoiding FOUC script,
 // it should come last in the chain unless...
 
+
 .wait(function(){
-    var a = document.getElementsByTagName("body")[0];
-    var c = document.getElementById("loader");           
-    a.removeChild(c);
-    a.className = a.className.replace("notdone","alldone");
+    window.onload = function(){
+        var a = document.getElementsByTagName("body")[0];
+        var c = document.getElementById("loader");           
+        a.removeChild(c);
+        a.className = a.className.replace("notdone","alldone");
+    };
 })
+
 
 // ...unless you use a script that doesn't affect the layout of the page
 // and wont be missed/triggered at page load, eg. a script that validates forms (validate.js), 
