@@ -61,9 +61,9 @@ $LAB
 })
 .wait(function(){
   $(".animsition").animsition({
-    inClass               :   'fade-in',
+    inClass               :   'na',
     outClass              :   'fade-out',
-    inDuration            :    1500,
+    inDuration            :    0,
     outDuration           :    800,
     linkElement           :   '.animsition-link', 
     loading               :    true,
