@@ -2,13 +2,6 @@ $LAB
 // write each test in a seperate .script function
 // all tests are run simultaneously/asynchronously
 .script(function(){
-	if ($('#main').length) {return ["js/jquery.smoothState.js", "js/smooth.css.js"]; }
-	else {return null;}	
-})
-.wait(function(){
-	$('#main').smoothState();
-})
-.script(function(){
 	
 	// load script if the the class *-col-* exists
 	
@@ -62,11 +55,6 @@ $LAB
 		mobile: true
 	});
 })
-/*
-.wait(function(){
-	$('#main').smoothState();
-})
-*/
 .wait(function(){
 	visibly.onHidden(function (){
     	$("body").css({"opacity":"0"})
