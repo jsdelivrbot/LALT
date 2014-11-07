@@ -56,6 +56,9 @@ $LAB
 	});
 })
 .wait(function(){
+	$(".alldone").css({"opacity":"0"}).velocity({ opacity: 1 }, { duration: 750 });
+})
+.wait(function(){
 	visibly.onHidden(function (){
     	$("body").css({"opacity":"0"})
 	}); 
