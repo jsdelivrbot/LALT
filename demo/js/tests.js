@@ -28,6 +28,10 @@ $LAB
 	else {return null;}
 })
 .script(function(){
+	if ($('.desktop').length) {return ["js/jquery.animsition.min.js", "js/animsition.css.js"]; }
+	else {return null;}
+})
+.script(function(){
 	if ($('[data-sr]').length) {return "js/scrollReveal.min.js"; }
 	else {return null;}
 })
