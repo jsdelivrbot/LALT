@@ -5,6 +5,9 @@ $LAB
 	if ($('#main').length) {return ["js/jquery.smoothState.js", "js/smooth.css.js"]; }
 	else {return null;}	
 })
+.wait(function(){
+	$('#main').smoothState();
+})
 .script(function(){
 	
 	// load script if the the class *-col-* exists
