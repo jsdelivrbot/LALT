@@ -57,7 +57,7 @@ $LAB
 })
 .wait(function(){
 	$("a").click(function() {
-  		$("body").velocity({ opacity: 0 }, { duration: 750 });
+  		$("body").velocity({ opacity: 0 }, { duration: 250 });
 	});
 })
 .wait(function(){
