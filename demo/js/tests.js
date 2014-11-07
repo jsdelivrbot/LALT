@@ -28,10 +28,6 @@ $LAB
 	else {return null;}
 })
 .script(function(){
-	if ($('.desktop').length) {return ["js/jquery.animsition.min.js", "js/animsition.css.js"]; }
-	else {return null;}
-})
-.script(function(){
 	if ($('[data-sr]').length) {return "js/scrollReveal.min.js"; }
 	else {return null;}
 })
@@ -58,21 +54,6 @@ $LAB
 		move: '222px',
 		mobile: true
 	});
-})
-.wait(function(){
-  $(".animsition").animsition({
-    inClass               :   'na',
-    outClass              :   'fade-out',
-    inDuration            :    0,
-    outDuration           :    800,
-    linkElement           :   '.animsition-link', 
-    loading               :    true,
-    loadingParentElement  :   'body',
-    loadingClass          :   'animsition-loading',
-    overlay               :   false,
-    overlayClass          :   'animsition-overlay-slide',
-    overlayParentElement  :   'body'
-  });
 })
 .wait(function(){
 	visibly.onHidden(function (){
