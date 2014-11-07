@@ -56,9 +56,9 @@ $LAB
 	});
 })
 .wait(function(){
-	$("a").click(function() {
-  		$("body").velocity({ opacity: 0 }, { duration: 250 });
-	});
+window.onbeforeunload(function() {
+	$("body").velocity({ opacity: 0 }, { duration: 250 });
+});
 })
 .wait(function(){
 	visibly.onHidden(function (){
