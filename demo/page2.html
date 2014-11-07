@@ -53,7 +53,7 @@
         </style>
     </head>
     <body>
-      <script>
+      <!--<script>
         var a = document.getElementsByTagName("body")[0];
         a.className = a.className + " notdone";
         var b = document.createElement("div");
@@ -64,12 +64,16 @@
             a.removeChild(c);
             a.className = a.className.replace("notdone","alldone");
         };
-    </script>
+    </script>-->
+    
+    <div id="main" class="m-scene">
+    <p><a href="index.html">index</a> | <a href="page2.html">page2</a> | <a href="page3.html">page3</a></p>
+    </div>
+    <div class="scene_element scene_element--fadein">
     
         <h1>Test .1 jaygrid</h1>
           <div class="d-col-1-2 t-col-1-3 m-col-8-10 m-center">
-              <h2>Hello World - page 2</h2>
-              <a href="index.html">index</a> <a href="page2.html">page2</a> <a href="page3.html">page3</a>
+              <h2>Hello World - page2</h2>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sagittis enim vel lectus malesuada dignissim. Aenean a faucibus arcu, eget dictum turpis. Integer tellus mi, fermentum et aliquam quis, placerat nec metus. Suspendisse fermentum sodales est, a consequat arcu congue nec. Quisque auctor neque dui, vel posuere nisi aliquam ac. Nullam neque nunc, placerat vel aliquet et, accumsan sit amet odio. Etiam a neque enim. Nam blandit a diam vel interdum. Quisque imperdiet mollis porttitor. Vivamus eu nulla a sem ornare suscipit. Nunc venenatis quam vitae diam pretium vestibulum. Quisque non aliquam justo, vitae egestas ex. Donec malesuada lacus eget magna aliquet, ac molestie arcu porttitor. Suspendisse at interdum sem.</p>
           </div>
           <div class="d-col-1-2 t-col-2-3 m-col-8-9 m-center">
@@ -132,5 +136,6 @@
         <h5>end test .5</h5>
     
     <div style="height:1000px;"></div>
+    </div>
     </body>
 </html>
