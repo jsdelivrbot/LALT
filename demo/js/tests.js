@@ -56,11 +56,6 @@ $LAB
 	});
 })
 .wait(function(){
-window.onbeforeunload(function() {
-	$("body").velocity({ opacity: 0 }, { duration: 250 });
-});
-})
-.wait(function(){
 	visibly.onHidden(function (){
     	$("body").css({"opacity":"0"})
 	}); 
