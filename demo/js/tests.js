@@ -1,7 +1,10 @@
 $LAB
 // write each test in a seperate .script function
 // all tests are run simultaneously/asynchronously
-
+.script(function(){
+	if ($('#main').length) {return ["js/jquery.smoothState.js", "js/smooth.css.js"]; }
+	else {return null;}	
+})
 .script(function(){
 	
 	// load script if the the class *-col-* exists
@@ -36,12 +39,7 @@ $LAB
 	if ($('#test-4').length) {return "//cdnjs.cloudflare.com/ajax/libs/jquery-parallax/1.1.3/jquery-parallax-min.js"; }	
 	else {return null;}
 })
-/*
-.script(function(){
-	if ($('#main').length) {return ["js/jquery.smoothState.js", "js/smooth.css.js"]; }
-	else {return null;}	
-})
-*/
+
 // write each inline initialization script in a seperate .wait function
 // these init. scripts are chained, they DON'T run simultaneously/asynchronously
 
