@@ -104,15 +104,16 @@
             
           #loader { 
               background: white;
-              position: absolute;
+              position: fixed;
               width:100%;
               height:100%;
+              z-index:999;
           }
           
           #loader.loaded {
               opacity:1;
-              -webkit-animation: fadeout 1.5s;
-              animation: fadeout 1.5s;
+              -webkit-animation: fadeout 2s;
+              animation: fadeout 2s;
               -webkit-animation-fill-mode: forwards;
               animation-fill-mode: forwards;
           }
@@ -143,7 +144,7 @@
             c.className = "loaded";
             a.className = a.className.replace("notdone","alldone");
             setTimeout(function() {
-                //a.removeChild(c);
+                a.removeChild(c);
             }, 3000);
         });
         /*
