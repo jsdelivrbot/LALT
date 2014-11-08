@@ -112,10 +112,26 @@
           }
          
           #loader.loaded {
-              -webkit-animation: fadeout 2s;
-              animation: fadeout 2s;
+              -webkit-animation: fadeout 1.5s;
+              animation: fadeout 1.5s;
               -webkit-animation-fill-mode: forwards;
               animation-fill-mode: forwards;
+          }
+          
+          #loader.loadeded {
+              -webkit-animation: shrink 2s;
+              animation: shrink 2s;
+              -webkit-animation-fill-mode: forwards;
+              animation-fill-mode: forwards;
+          }
+          
+          @-webkit-keyframes fadeout {
+          from { opacity: 1;}
+          to { opacity: 0;}
+          }
+          @keyframes fadeout {
+          from { opacity: 1;}
+          to { opacity: 0;}
           }
           
           @-webkit-keyframes fadeout {
@@ -144,11 +160,11 @@
             c.className = "loaded";
             a.className = a.className.replace("notdone","alldone");
             setTimeout(function() {
-                a.removeChild(c);
-            }, 3000);
+                c.className = "loadeded";
+            }, 1500);
         });
         window.onbeforeunload = (function() {
-            a.style.opacity = "0"
+            
         });
         /*
         window.onload = function(){
