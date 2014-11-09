@@ -48,6 +48,13 @@
               animation-fill-mode: forwards;
           }
           
+          #loader.reloaded {
+              -webkit-animation: grow 0.5s;
+              animation: grow 0.5s;
+              -webkit-animation-fill-mode: forwards;
+              animation-fill-mode: forwards;
+          }
+          
           @-webkit-keyframes fadeout {
           from { opacity: 1;}
           to { opacity: 0;}
@@ -64,6 +71,15 @@
           @keyframes shrink {
           from { height: 100%;}
           to { height: 0;}
+          }
+          
+          @-webkit-keyframes grow {
+          from { height: 0;}
+          to { height: 100;}
+          }
+          @keyframes grow {
+          from { height: 0;}
+          to { height: 100%;}
           }
           
             
@@ -87,7 +103,8 @@
             }, 2000);
         });
         window.onbeforeunload = (function() {
-            $("body").velocity({ translateX: -100% }, { duration: 400 });
+            c.className = "reloaded";
+            a.className = "notdone";
         });
         /*
         window.onload = function(){
