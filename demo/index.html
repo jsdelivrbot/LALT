@@ -41,18 +41,9 @@
               animation-fill-mode: forwards;
           }
           
-          #loader.loadeded {
-              opacity:0;
-              -webkit-animation: shrink 0.5s;
-              animation: shrink 0.5s;
-              -webkit-animation-fill-mode: forwards;
-              animation-fill-mode: forwards;
-          }
-          
-          #loader.reloaded {
-              opacity:1;
-              -webkit-animation: grow 0.2s;
-              animation: grow 0.2s;
+          #byebye {
+              -webkit-animation: fadeout 0.5s;
+              animation: fadeout 0.5s;
               -webkit-animation-fill-mode: forwards;
               animation-fill-mode: forwards;
           }
@@ -65,26 +56,6 @@
           from { opacity: 1;}
           to { opacity: 0;}
           }
-          
-          @-webkit-keyframes shrink {
-          from { height: 100%;}
-          to { height: 0;}
-          }
-          @keyframes shrink {
-          from { height: 100%;}
-          to { height: 0;}
-          }
-          
-          @-webkit-keyframes grow {
-          from { height: 0;}
-          to { height: 100;}
-          }
-          @keyframes grow {
-          from { height: 0;}
-          to { height: 100%;}
-          }
-          
-            
         </style>
     </head>
     <body>
@@ -101,11 +72,11 @@
             c.className = "loaded";
             a.className = a.className.replace("notdone","alldone");
             setTimeout(function() {
-                c.className = "loadeded";
+                a.removeChild(c);
             }, 2000);
         });
         window.onbeforeunload = (function() {
-            c.className = "reloaded";
+            a.id = "byebye";
         });
         /*
         window.onload = function(){
