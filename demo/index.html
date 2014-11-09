@@ -10,47 +10,6 @@
         <script src="js/assets.js"></script>
         <link rel="stylesheet" href="css/main.css" type="text/css" media="all">
         <style>
-          .notdone {
-              overflow:hidden;
-              -webkit-animation: fadein 1s;
-              animation: fadein 1s;
-              animation-fill-mode: forwards;
-              -webkit-animation-fill-mode: forwards;
-              }
-              
-          .alldone {
-              -webkit-animation: fadein 1s;
-              animation: fadein 1s;
-              animation-fill-mode: forwards;
-              -webkit-animation-fill-mode: forwards;
-              }
-              
-          #loader ~ * { opacity:0 }
-          #loader { 
-              background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACABAMAAAAxEHz4AAAAD1BMVEUBBAA6PDl1d3Sws6/9//xhwTw9AAAAAWJLR0QAiAUdSAAAAAlwSFlzAAAOwwAADsMBx2+oZAAAAAd0SU1FB94LBgwKLQBx9KkAAAIBSURBVGje7dnrkYQgDADgYAWONrAONrAeFQj913T70DXkhSP/duFv4Lu5C4TgQaoc0IBfAUIlEIdQCcBQC8BYCxjCSQB8LeDmSgC6WsA1oAENaMAPAou3AB6lwNqzAo6AhUcJEPvH1KABUjQH4u11BQQZeK5nUeDr6Zwd2KP5bZ8BE4AwZwP+PtFRA+4A0pwNmOQoAhZAw1MAlOgBLD2e4rwFoCgcG4DMmQ0AJRPQBlDmSMARhTyBeOzJFIFPooAkUJgjA3vrBjSBeIwWsEWB/gHcjf6iGOhYFMgUF7BGgY5HCfBMMEooAZ4/k0Zz4L1Bji0VytEcGMmmzgFPjgwHRnqsQjmKgYEdTAwcRzBOCoDK3coAXMpWBQjsCAe5rMcGNOC7AfMwwYnDdNzJ2YHl0ZtWUAZ6z4sFJU7FknaXS9pYLGlb2SsU1ZqyPmddgHyxzNbF4sJauFgec3p2tfVWFMrXp3b1+lQCWFbV691uIVDmtQbDbmLEBqjLWpxYWC+0YHmTZTdyUhM4pxLA3gWL1WhugNLM8kbYJxkId2M9Eniz/SkZk9TQ0zIwJB14J7xTPv+JzxFSE6VHTb4dOunJg6pe7NWvZu8nWUg2IDzssmTOqQRc+ijbgAY0oAFfB7hKwCrnpwCf6oAx1QFX1+/AEOqA6+u3rzjX17f/uTbgNf4BiER2pfqyHF4AAAAASUVORK5CYII=) no-repeat center center fixed;
-              position: fixed;
-              width:100%;
-              height:100%;
-              -webkit-animation: spin 2s linear infinite;
-              animation: spin 2s linear infinite;
-          }
-          @-webkit-keyframes spin {
-          from {-webkit-transform: rotateZ(0);}
-          to {-webkit-transform: rotateZ(360deg);}
-          }
-          @keyframes spin {
-          from {transform: rotateZ(0);}
-          to {transform: rotateZ(360deg);}
-          }
-          
-          @-webkit-keyframes fadein {
-          from { opacity: 0;}
-          to { opacity: 1;}
-          }
-          @keyframes fadein {
-          from { opacity: 0;}
-          to { opacity: 1;}
-          }
             /* ============================== */
             #test-4{
                 background:url("images/image1.jpg") no-repeat center center fixed;
@@ -61,22 +20,101 @@
                 height:500px;
             }
             .awesome { color:red }
+            
+        .notdone {
+            overflow:hidden;
+        }
+            
+          #loader { 
+              background: white;
+              position: fixed;
+              width:100%;
+              height:100%;
+              z-index:999;
+              opacity:1;
+          }
+         
+          #loader.loaded {
+              -webkit-animation: fadeout 1.5s;
+              animation: fadeout 1.5s;
+              -webkit-animation-fill-mode: forwards;
+              animation-fill-mode: forwards;
+          }
+          
+          #loader.loadeded {
+              opacity:0;
+              -webkit-animation: shrink 0.5s;
+              animation: shrink 0.5s;
+              -webkit-animation-fill-mode: forwards;
+              animation-fill-mode: forwards;
+          }
+          
+          #loader.reloaded {
+              opacity:1;
+              -webkit-animation: grow 0.2s;
+              animation: grow 0.2s;
+              -webkit-animation-fill-mode: forwards;
+              animation-fill-mode: forwards;
+          }
+          
+          @-webkit-keyframes fadeout {
+          from { opacity: 1;}
+          to { opacity: 0;}
+          }
+          @keyframes fadeout {
+          from { opacity: 1;}
+          to { opacity: 0;}
+          }
+          
+          @-webkit-keyframes shrink {
+          from { height: 100%;}
+          to { height: 0;}
+          }
+          @keyframes shrink {
+          from { height: 100%;}
+          to { height: 0;}
+          }
+          
+          @-webkit-keyframes grow {
+          from { height: 0;}
+          to { height: 100;}
+          }
+          @keyframes grow {
+          from { height: 0;}
+          to { height: 100%;}
+          }
+          
+            
         </style>
     </head>
     <body>
       <script>
+      
+      
         var a = document.getElementsByTagName("body")[0];
         a.className = a.className + " notdone";
         var b = document.createElement("div");
         a.appendChild(b);
         b.id = "loader";
-        window.onload = function(){
-            var c = document.getElementById("loader");
-            a.removeChild(c);
+        var c = document.getElementById("loader");
+        window.onload = (function() {
+            c.className = "loaded";
             a.className = a.className.replace("notdone","alldone");
+            setTimeout(function() {
+                c.className = "loadeded";
+            }, 2000);
+        });
+        window.onbeforeunload = (function() {
+            c.className = "reloaded";
+        });
+        /*
+        window.onload = function(){
+            setTimeout(function() {
+                a.removeChild(c);
+            }, 100);
         };
+        */
     </script>
-    
     <div class="animsition">
     <div>
     <p><a href="index.html" class="animsition-link">index</a> | <a href="page2.html" class="animsition-link">page2</a> | <a href="page3.html" class="animsition-link">page3</a></p>
