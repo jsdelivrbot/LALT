@@ -32,7 +32,7 @@ $LAB
 	else {return null;}
 })
 .script(function(){
-	return "js/growtype.js"; 
+	return "js/typeScale.min.js"; 
 })
 .script(function(){
 	if ($('#test-4').length) {return "//cdnjs.cloudflare.com/ajax/libs/jquery-parallax/1.1.3/jquery-parallax-min.js"; }	
@@ -58,15 +58,6 @@ $LAB
 		mobile: true
 	});
 })
-/*
-.wait(function(){
-	$('body').flowtype({ 
-		minFont : 14,
- 		maxFont : 22,
- 		fontRatio : 72
-	});
-})
-*/
 .wait(function(){
 	visibly.onHidden(function (){
     	$("body").css({"opacity":"0"})
