@@ -5,6 +5,10 @@ var w=window,
     x=w.innerWidth||e.clientWidth||g.clientWidth;
     
 g.style.fontSize = (x+2400)/3200 + "em";
+g.style.lineHeight = 125e-6*x + 1.2;
 
-// g.style.fontSize = x/200 + 12 + "px";
-// pixel equiv.
+/*
+size in pixels
+
+g.style.fontSize = x/200 + 12 + "px";
+*/
