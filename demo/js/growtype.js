@@ -1,12 +1,16 @@
-var w=window,
-    d=document,
-    e=d.documentElement,
-    g=d.getElementsByTagName("body")[0],
-    x=w.innerWidth||e.clientWidth||g.clientWidth;
+function viewport() {
+    var e = window, a = 'inner';
+    if (!('innerWidth' in window )) {
+        a = 'client';
+        e = document.documentElement || document.body;
+    }
+return { width : e[ a+'Width' ] , height : e[ a+'Height' ] };
+}
 function on_resize(c,t){onresize=function(){clearTimeout(t);t=setTimeout(c,100)};return c};
 on_resize(function() {
-g.style.fontSize = (x+4320)/5120 + "em";
-g.style.lineHeight = 125e-6*x + 1.2;
+    var g = document.getElementsByTagName("body")[0]
+g.style.fontSize = (width+4320)/5120 + "em";
+g.style.lineHeight = 125e-6*width + 1.2;
 
 /*
 size in pixels
