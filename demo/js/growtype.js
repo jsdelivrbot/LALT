@@ -6,8 +6,8 @@ function viewport() {
     }
 return { width : e[ a+'Width' ] , height : e[ a+'Height' ] };
 }
-function on_resize(c,t){onresize=function(){clearTimeout(t);t=setTimeout(c,100)};return c};
-on_resize(function() {
+function on_reshape(c,t){onresize=function(){clearTimeout(t);t=setTimeout(c,100)};return c};
+on_reshape(function() {
     var g = document.getElementsByTagName("body")[0]
 g.style.fontSize = (viewport().width+4320)/5120 + "em";
 g.style.lineHeight = 125e-6*viewport().width + 1.2;
