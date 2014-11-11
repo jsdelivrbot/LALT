@@ -59,7 +59,7 @@ $LAB
 	});
 })
 .wait(function(){
-	$('body').flowtype({fontRatio : 30});
+	$('body').flowtype({fontRatio : 60});
 })
 .wait(function(){
 	visibly.onHidden(function (){
