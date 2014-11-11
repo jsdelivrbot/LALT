@@ -63,10 +63,10 @@ color: #4d4d4d;
 font-weight: 300;
 font-size: 106.25%;
 font-family: 'Open Sans', helvetica, verdana, sans-serif;
-line-height: 1.5295;
+//line-height: 1.5295;
 }
 p, pre, dl, menu, ol, ul, address, blockquote, figure, table, table caption {
-margin-bottom: 1.5295em;
+//margin-bottom: 1.5295em;
 margin-top: 0;
 }
 a, a:visited {text-decoration: none; color: inherit;}
@@ -93,6 +93,7 @@ font-weight: 400;
 font-style: normal;
 margin-top:0;
 }
+/*
 h1,.h1 {
 font-size: 2.4706em;
 line-height: 1.2381em;
@@ -137,6 +138,7 @@ font-size: 0.5295em;
 line-height: 1.4445em;
 margin-bottom: 1.4445em;
 }
+*/
 .fineprint::selection {
 background: #000;
 color: #fff;
