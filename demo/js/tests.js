@@ -32,6 +32,9 @@ $LAB
 	else {return null;}
 })
 .script(function(){
+	return "js/flowtype.js"; 
+})
+.script(function(){
 	if ($('#test-4').length) {return "//cdnjs.cloudflare.com/ajax/libs/jquery-parallax/1.1.3/jquery-parallax-min.js"; }	
 	else {return null;}
 })
@@ -54,6 +57,9 @@ $LAB
 		move: '222px',
 		mobile: true
 	});
+})
+.wait(function(){
+	$('body').flowtype();
 })
 .wait(function(){
 	visibly.onHidden(function (){
