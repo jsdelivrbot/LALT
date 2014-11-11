@@ -1,3 +1,4 @@
+/*
 (function() {
 window.addEventListener('resize', fontSize);
 function fontSize(){
@@ -10,3 +11,4 @@ function fontSize(){
     g.style.lineHeight = 125e-6*x + 1.2;
 } 
 })();
+*/
