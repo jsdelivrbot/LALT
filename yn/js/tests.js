@@ -1,17 +1,19 @@
-yepnope({ 
+yepnope([
+{ 
   test: ($('table').length),
   yep: ['//cdnjs.cloudflare.com/ajax/libs/stupidtable/0.0.1/stupidtable.js', 'css/table.css'],
   callback: function (url, result, key) {
     $("table").stupidtable();
   }
-})
-yepnope({ 
+},
+{ 
   test: ($('[class*="-col-"]').length),
   yep: 'js/jquery.jaygrid.min.js',
   callback: function (url, result, key) {
     $.jaygrid();
   }
-})
+}
+])
 yepnope({ 
   test: ($('.fontface [class*="icon-"]').length),
   yep: 'css/iconfont.css'
