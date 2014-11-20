@@ -1,1 +1,1 @@
-###[Run this demo](//rawgit.com/Paul-Browne/LALT/master/demo/index.html)
+###[Run this demo](https://rawgit.com/Paul-Browne/LALT/master/yn/index.html)
