@@ -15,4 +15,4 @@ $LAB
 // are loaded & executed, because the tests depend upon
 // one or more of them being loaded
 
-  .script("js/tests.js")
+  .script("js/tests.js");
