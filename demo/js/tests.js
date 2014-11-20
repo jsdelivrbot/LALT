@@ -37,7 +37,8 @@ $LAB
 .script(function(){
 	if ($('#test-4').length) {return "//cdnjs.cloudflare.com/ajax/libs/jquery-parallax/1.1.3/jquery-parallax-min.js"; }	
 	else {return null;}
-});
+})
+.script("js/inits.js").wait();
 
 // write each inline initialization script in a seperate .wait function
 // these init. scripts are chained, they DON'T run simultaneously/asynchronously
