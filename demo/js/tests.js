@@ -28,6 +28,10 @@ $LAB
 	else {return null;}
 })
 .script(function(){
+	if ($('pre code').length) {return ["js/hlite.js", "js/hlite.css.js"]; }
+	else {return null;}
+})
+.script(function(){
 	if ($('[data-sr]').length) {return "js/scrollReveal.min.js"; }
 	else {return null;}
 })
