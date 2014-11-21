@@ -22,4 +22,5 @@ $LAB
     visibly.onVisible(function (){
     	$("body").velocity({ opacity: 1 }, { duration: 600 })
 	});
-}); // <-- remember to end with a semi-colon
+})
+.script("js/alldone.js"); // <-- remember to end with a semi-colon
