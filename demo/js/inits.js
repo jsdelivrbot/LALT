@@ -11,8 +11,7 @@ $LAB
 .wait(function(){
 	$("table").stupidtable();
 })
-.wait()
-.script("js/ringo.js")
+.script("js/ringo.js").wait()
 .wait(function(){
 	window.sr = new scrollReveal({
 		reset: true,
