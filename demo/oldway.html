@@ -8,9 +8,22 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         
         <link rel="stylesheet" href="css/main.css" type="text/css" media="all">
-    
-        <script src="//cdnjs.cloudflare.com/ajax/libs/labjs/2.0.3/LAB.min.js"></script>
-        <script src="js/assets.js"></script>
+        
+        <link rel="stylesheet" href="css/iconfont.css" type="text/css" media="all">
+        <link rel="stylesheet" href="css/table.css" type="text/css" media="all">
+        <link rel="stylesheet" href="css/hlite.css" type="text/css" media="all">
+        
+        
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/velocity/1.1.0/velocity.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/headjs/1.0.3/head.css3.min.js"></script>
+        
+        <script src="js/hlite.js"></script>
+        <script src="js/scrollReveal.min.js"></script>
+        <script src="//rawgit.com/Paul-Browne/jaygrid/master/js/jquery.jaygrid.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/stupidtable/0.0.1/stupidtable.js"></script>
+        <script src="//rawgit.com/addyosmani/visibly.js/master/visibly.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-parallax/1.1.3/jquery-parallax-min.js"></script>
     
         <style>
             /* ============================== */
@@ -86,6 +99,17 @@
         a.appendChild(b);
         b.id = "loader";
         b.className = "loading";
+        var c = document.getElementById("loader");
+        window.onload = (function() {
+            c.className = "loaded";
+            a.className = a.className.replace("notdone","alldone");
+            setTimeout(function() {
+                a.removeChild(c);
+            }, 1500);
+        });
+        window.onbeforeunload = (function() {
+            a.id = "byebye";
+        });
     </script>
     <div class="animsition">
     <div>
@@ -138,6 +162,35 @@
 &lt;script&gt;</code></pre>
         </div>
         <h5>end test .6</h5>
+        
+        <script>
+        hljs.initHighlighting();
+        </script>
+        
+        <script>
+        $.jaygrid();
+        </script>
+        
+        <script>
+        $("#test-4").parallax("50%", 0.3);
+        </script>
+        
+        <script>
+    	window.sr = new scrollReveal({
+    		reset: true,
+    		move: '222px',
+    		mobile: true
+    	});
+        </script>
+        
+        <script>
+    	visibly.onHidden(function (){
+        	$("body").css({"opacity":"0"})
+    	}); 
+        visibly.onVisible(function (){
+        	$("body").velocity({ opacity: 1 }, { duration: 600 })
+    	});
+        </script>
 
     </body>
 </html>
