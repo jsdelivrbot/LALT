@@ -1,22 +1,14 @@
-
 $LAB
+.script("//cdnjs.cloudflare.com/ajax/libs/FitText.js/1.1/jquery.fittext.min.js")
 .wait(function(){
 	$.jaygrid();
-})
-.wait(function(){
 	$("#test-4").parallax("50%", 0.3);
-})
-.wait(function(){
 	$("table").stupidtable();
-})
-.wait(function(){
 	window.sr = new scrollReveal({
 		reset: true,
 		move: '222px',
 		mobile: true
 	});
-})
-.wait(function(){
 	visibly.onHidden(function (){
     	$("body").css({"opacity":"0"})
 	}); 
