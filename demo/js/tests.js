@@ -39,7 +39,4 @@ $LAB
 	else {return null;}
 })
 .wait()
-.script("js/inits2.js");
-
-// write each inline initialization script in a seperate .wait function
-// these init. scripts are chained, they DON'T run simultaneously/asynchronously
+.script("js/inits.js");
