@@ -1,5 +1,8 @@
 $LAB
 .wait(function(){
+	hljs.initHighlighting();
+})
+.wait(function(){
 	$.jaygrid();
 })
 .wait(function(){
