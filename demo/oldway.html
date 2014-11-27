@@ -104,19 +104,38 @@
         <h5>end test .6</h5>
         
         <script src="js/compiled.js"></script>
+        <script>
+        hljs.initHighlighting();
+        $.jaygrid();
+        $("table").stupidtable();
+        $("#test-4").parallax("50%", 0.3);
+        window.sr = new scrollReveal({
+    		reset: true,
+    		move: '222px',
+    		mobile: true
+    	});
+    	visibly.onHidden(function (){
+        	$("body").css({"opacity":"0"})
+    	}); 
+        visibly.onVisible(function (){
+        	$("body").velocity({ opacity: 1 }, { duration: 600 })
+    	});
+    	
+        </script>
         
+        <!--
         <script>
         hljs.initHighlighting();
         </script>
-        
         <script>
         $.jaygrid();
         </script>
-        
+        <script>
+        $("table").stupidtable();
+        </script>
         <script>
         $("#test-4").parallax("50%", 0.3);
         </script>
-        
         <script>
     	window.sr = new scrollReveal({
     		reset: true,
@@ -124,7 +143,6 @@
     		mobile: true
     	});
         </script>
-        
         <script>
     	visibly.onHidden(function (){
         	$("body").css({"opacity":"0"})
@@ -133,6 +151,7 @@
         	$("body").velocity({ opacity: 1 }, { duration: 600 })
     	});
         </script>
+        -->
 
     </body>
 </html>
