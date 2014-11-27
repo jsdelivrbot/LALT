@@ -86,6 +86,17 @@
         a.appendChild(b);
         b.id = "loader";
         b.className = "loading";
+        var c = document.getElementById("loader");
+        window.onload = (function() {
+        c.className = "loaded";
+        a.className = a.className.replace("notdone","alldone");
+        setTimeout(function() {
+            a.removeChild(c);
+        }, 1500);
+        });
+        window.onbeforeunload = (function() {
+            a.id = "byebye";
+        });
     </script>
     <div class="animsition">
     <div>
