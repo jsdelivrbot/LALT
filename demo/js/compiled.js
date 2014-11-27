@@ -19,3 +19,23 @@ var hljs=new function(){function k(v){return v.replace(/&/gm,"&amp;").replace(/<
 !function(a){var b=a(window),c=b.height();b.resize(function(){c=b.height()}),a.fn.parallax=function(d,e,f){function k(){var f=b.scrollTop();g.each(function(){var b=a(this),j=b.offset().top,k=h(b);f>j+k||j>f+c||g.css("backgroundPosition",d+" "+Math.round((i-f)*e)+"px")})}var h,i,g=a(this);g.each(function(){i=g.offset().top}),h=f?function(a){return a.outerHeight(!0)}:function(a){return a.height()},(arguments.length<1||null===d)&&(d="50%"),(arguments.length<2||null===e)&&(e=.1),(arguments.length<3||null===f)&&(f=!0),b.bind("scroll",k).resize(k),k()}}(jQuery);
 /*visibly*/
 !function(){window.visibly={q:document,p:void 0,prefixes:["webkit","ms","o","moz","khtml"],props:["VisibilityState","visibilitychange","Hidden"],m:["focus","blur"],visibleCallbacks:[],hiddenCallbacks:[],genericCallbacks:[],_callbacks:[],cachedPrefix:"",fn:null,onVisible:function(a){"function"==typeof a&&this.visibleCallbacks.push(a)},onHidden:function(a){"function"==typeof a&&this.hiddenCallbacks.push(a)},getPrefix:function(){if(!this.cachedPrefix)for(var a=0;b=this.prefixes[a++];)if(b+this.props[2]in this.q)return this.cachedPrefix=b,this.cachedPrefix},visibilityState:function(){return this._getProp(0)},hidden:function(){return this._getProp(2)},visibilitychange:function(a){"function"==typeof a&&this.genericCallbacks.push(a);var b=this.genericCallbacks.length;if(b)if(this.cachedPrefix)for(;b--;)this.genericCallbacks[b].call(this,this.visibilityState());else for(;b--;)this.genericCallbacks[b].call(this,arguments[0])},isSupported:function(){return this._getPropName(2)in this.q},_getPropName:function(a){return""==this.cachedPrefix?this.props[a].substring(0,1).toLowerCase()+this.props[a].substring(1):this.cachedPrefix+this.props[a]},_getProp:function(a){return this.q[this._getPropName(a)]},_execute:function(a){if(a){this._callbacks=1==a?this.visibleCallbacks:this.hiddenCallbacks;for(var b=this._callbacks.length;b--;)this._callbacks[b]()}},_visible:function(){window.visibly._execute(1),window.visibly.visibilitychange.call(window.visibly,"visible")},_hidden:function(){window.visibly._execute(2),window.visibly.visibilitychange.call(window.visibly,"hidden")},_nativeSwitch:function(){this[this._getProp(2)?"_hidden":"_visible"]()},_listen:function(){try{this.isSupported()?this.q.addEventListener(this._getPropName(1),function(){window.visibly._nativeSwitch.apply(window.visibly,arguments)},1):this.q.addEventListener?(window.addEventListener(this.m[0],this._visible,1),window.addEventListener(this.m[1],this._hidden,1)):this.q.attachEvent&&(this.q.attachEvent("onfocusin",this._visible),this.q.attachEvent("onfocusout",this._hidden))}catch(a){}},init:function(){this.getPrefix(),this._listen()}},this.visibly.init()}();
+
+$(function() {
+
+  hljs.initHighlighting();
+  $.jaygrid();
+  $("table").stupidtable();
+  $("#test-4").parallax("50%", 0.3);
+  window.sr = new scrollReveal({
+  reset: true,
+  move: '222px',
+  mobile: true
+  });
+  visibly.onHidden(function (){
+  	$("body").css({"opacity":"0"})
+  }); 
+  visibly.onVisible(function (){
+  	$("body").velocity({ opacity: 1 }, { duration: 600 })
+  });
+    
+});
