@@ -5,7 +5,7 @@ $LAB
 	
 	// load script if the the class *-col-* exists
 	
-	if ($('[class*="-col-"]').length) {return "//rawgit.com/Paul-Browne/jaygrid/master/js/jquery.jaygrid.min.js"; }
+	if (document.querySelectorAll('[class*="-col-"]').length) {return "//rawgit.com/Paul-Browne/jaygrid/master/js/jquery.jaygrid.min.js"; }
 	
 	// otherwise do nothing
 	
