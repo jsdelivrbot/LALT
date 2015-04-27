@@ -64,7 +64,7 @@ $LAB
 		prefetch: true,
 		pageCacheSize: 4,
 		callback : function(){
-			$.getScript("https://rawgit.com/Paul-Browne/LALT/master/smooth-state-test/js/tests.js", function(){});
+			$.getScript("https://rawgit.com/Paul-Browne/LALT/master/smooth-state-test/js/tests.js");
 		}
 	});
 })
