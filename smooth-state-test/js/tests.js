@@ -63,7 +63,9 @@ $LAB
 	$('#main').smoothState({
 		prefetch: true,
 		pageCacheSize: 4,
-		callback : function("https://rawgit.com/Paul-Browne/LALT/master/smooth-state-test/js/tests.js"){}
+		callback : function(){
+			$.getScript("https://rawgit.com/Paul-Browne/LALT/master/smooth-state-test/js/tests.js", function(){});
+		}
 	});
 })
 .wait(function(){
