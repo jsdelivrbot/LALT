@@ -63,9 +63,7 @@ $LAB
 	$('#main').smoothState({
 		prefetch: true,
 		pageCacheSize: 4,
-		callback : function() {
-			$.jaygrid();
-		}
+		callback : function("https://rawgit.com/Paul-Browne/LALT/master/smooth-state-test/js/tests.js"){}
 	});
 })
 .wait(function(){
