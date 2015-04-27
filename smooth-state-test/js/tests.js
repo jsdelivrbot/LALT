@@ -60,7 +60,13 @@ $LAB
 	});
 })
 .wait(function(){
-	$('#main').smoothState();
+	$('#main').smoothState({
+		prefetch: true,
+		pageCacheSize: 4,
+		callback : function(url, $container, $content) {
+			$.jaygrid();
+		}
+	});
 })
 .wait(function(){
 	visibly.onHidden(function (){
