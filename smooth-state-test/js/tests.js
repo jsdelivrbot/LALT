@@ -63,7 +63,7 @@ $LAB
 	$('#main').smoothState({
 		prefetch: true,
 		pageCacheSize: 4,
-		callback : function(url, $container, $content) {
+		callback : function() {
 			$.jaygrid();
 		}
 	});
