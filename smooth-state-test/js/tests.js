@@ -57,6 +57,9 @@ $LAB
 	$("table").stupidtable();
 })
 .wait(function(){
+	hljs.initHighlighting(); 
+})
+.wait(function(){
 	window.sr = new scrollReveal({
 		reset: true,
 		move: '222px',
