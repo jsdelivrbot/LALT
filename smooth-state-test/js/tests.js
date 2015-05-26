@@ -36,7 +36,7 @@ $LAB
 	else {return null;}
 })
 .script(function(){
-	if ($('pre code').length) {return "js/highlight.js"; }
+	if ($('pre code').length) {return ["js/highlight.js", "js/highlight.css.js"]; }
 	else {return null;}
 })
 .script(function(){
