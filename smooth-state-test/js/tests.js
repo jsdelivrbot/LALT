@@ -2,7 +2,7 @@ $LAB
 // write each test in a seperate .script function
 // all tests are run simultaneously/asynchronously
 .script(function(){
-	if (document.getElementById("main").length) {return ["js/jquery.smoothState.js", "js/smooth.css.js"]; }
+	if (document.querySelectorAll("#main").length) {return ["js/jquery.smoothState.js", "js/smooth.css.js"]; }
 	else {return null;}	
 })
 .script(function(){
@@ -16,7 +16,7 @@ $LAB
 	else {return null;}
 })
 .script(function(){
-	if (document.getElementsByTagName('table').length) {return ["//cdnjs.cloudflare.com/ajax/libs/stupidtable/0.0.1/stupidtable.js", "js/table.css.js"]; }
+	if (document.querySelectorAll('table').length) {return ["//cdnjs.cloudflare.com/ajax/libs/stupidtable/0.0.1/stupidtable.js", "js/table.css.js"]; }
 	else {return null;}	
 })
 .script(function(){
