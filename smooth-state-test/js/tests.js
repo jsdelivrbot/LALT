@@ -36,6 +36,10 @@ $LAB
 	else {return null;}
 })
 .script(function(){
+	if ($('pre code').length) {return "js/highlight.js"; }
+	else {return null;}
+})
+.script(function(){
 	if ($('#test-4').length) {return "//cdnjs.cloudflare.com/ajax/libs/jquery-parallax/1.1.3/jquery-parallax-min.js"; }	
 	else {return null;}
 })
